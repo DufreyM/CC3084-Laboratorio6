@@ -158,7 +158,15 @@ def build_stopwords():
 
         base = set(nltk_stopwords.words("spanish"))
 
-    extra = {"q", "x", "xq", "pq", "d", "k", "ke", "jaja", "jajaja", "jeje", "ud", "uds"}
+    extra = {
+        "q", "x", "xq", "pq", "d", "k", "ke", "jaja", "jajaja", "jeje", "ud", "uds",
+        # el corpus es informal y casi nunca usa tildes: "si" (sin tilde) funciona la
+        # mayoria de veces como el "si" afirmativo/condicional (con tilde), que SI esta
+        # en la lista de NLTK; sin este agregado quedaba como la palabra mas frecuente
+        # del corpus sin aportar contenido tematico (detectado en el analisis de
+        # frecuencias del ejercicio 3).
+        "si",
+    }
     return base | extra
 
 
@@ -225,3 +233,20 @@ def save_processed(df, name):
     out_path = PROCESSED_DIR / name
     df.to_csv(out_path, index=False, encoding="utf-8-sig")
     return out_path
+
+
+LIST_COLUMNS = [
+    "hashtags", "mentions", "emojis", "keywords", "query_hits",
+    "dataset_sources", "dataset_sources_comment", "dataset_sources_video",
+]
+
+
+def load_processed(name):
+    """Lee un CSV de data/processed/ y reconstruye a list[str] las columnas
+    que save_processed() guardo como texto con forma de lista (ej. "['a']").
+    Usado por los notebooks 02 y 03 para no volver a parsear a mano."""
+    df = pd.read_csv(PROCESSED_DIR / name, encoding="utf-8-sig")
+    for col in LIST_COLUMNS:
+        if col in df.columns:
+            df[col] = df[col].apply(_parse_list_literal)
+    return df
