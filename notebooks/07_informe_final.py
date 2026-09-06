@@ -198,6 +198,21 @@ print(f"Informe consolidado guardado en {informe_path} ({len(informe_md)} caract
 import markdown as md_lib
 from xhtml2pdf import pisa
 
+caratula = """
+<div style="text-align: center; margin-top: 60pt;">
+<p style="font-size: 15pt; font-weight: bold;">UNIVERSIDAD DEL VALLE DE GUATEMALA</p>
+<p style="font-size: 13pt;">Data Science</p>
+<p style="font-size: 13pt;">Seccion - 20</p>
+<p style="margin-top: 90pt; font-size: 16pt; font-weight: bold;">Laboratorio 6</p>
+<p style="font-size: 14pt;">Informe</p>
+<p style="margin-top: 90pt; font-size: 12pt;">Leonardo Dufrey Mejia Mejia<br>
+Maria Jose Giron Isidro<br>
+Mia Alejandra Fuentes Merida</p>
+<p style="margin-top: 90pt; font-size: 12pt;">26 de julio de 2026</p>
+</div>
+<p style="page-break-after: always;"></p>
+"""
+
 html_body = md_lib.markdown(informe_md, extensions=["tables", "nl2br"])
 html_full = f"""<html><head><meta charset="utf-8"><style>
 * {{ color: #000000 !important; }}
@@ -209,7 +224,7 @@ h3 {{ font-size: 13pt; font-weight: bold; margin-top: 12pt; }}
 img {{ max-width: 480px; display: block; margin: 8px auto; }}
 table {{ border-collapse: collapse; width: 100%; font-size: 11pt; }}
 td, th {{ border: 1px solid #000000; padding: 3px; }}
-</style></head><body>{html_body}</body></html>"""
+</style></head><body>{caratula}{html_body}</body></html>"""
 
 pdf_path = OUTPUTS / "informe_final.pdf"
 with open(pdf_path, "wb") as f:

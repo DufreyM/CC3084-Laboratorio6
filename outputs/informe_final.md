@@ -23,50 +23,10 @@
 - Dimensiones videos: (293, 22), comments: (406, 20)
 
 **Tipos de variables (videos):**
-video_id                               str
-title                                  str
-channel_name                           str
-channel_id                             str
-source_query                           str
-source_group                           str
-dataset_sources                     object
-channel_handle                         str
-published_time                         str
-view_count_text                        str
-description_snippet                    str
-video_url                              str
-query_hits                          object
-keywords                            object
-description                            str
-view_count                           int64
-publish_date           datetime64[us, UTC]
-upload_date            datetime64[us, UTC]
-category                               str
-owner_handle                           str
-n_keywords                           int64
-n_query_hits                         int64
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">video_id: str</td><td style="border:none;padding:2px 12px 2px 0;">title: str</td><td style="border:none;padding:2px 12px 2px 0;">channel_name: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">channel_id: str</td><td style="border:none;padding:2px 12px 2px 0;">source_query: str</td><td style="border:none;padding:2px 12px 2px 0;">source_group: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">dataset_sources: object</td><td style="border:none;padding:2px 12px 2px 0;">channel_handle: str</td><td style="border:none;padding:2px 12px 2px 0;">published_time: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">view_count_text: str</td><td style="border:none;padding:2px 12px 2px 0;">description_snippet: str</td><td style="border:none;padding:2px 12px 2px 0;">video_url: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">query_hits: object</td><td style="border:none;padding:2px 12px 2px 0;">keywords: object</td><td style="border:none;padding:2px 12px 2px 0;">description: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">view_count: int64</td><td style="border:none;padding:2px 12px 2px 0;">publish_date: datetime64[us, UTC]</td><td style="border:none;padding:2px 12px 2px 0;">upload_date: datetime64[us, UTC]</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">category: str</td><td style="border:none;padding:2px 12px 2px 0;">owner_handle: str</td><td style="border:none;padding:2px 12px 2px 0;">n_keywords: int64</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">n_query_hits: int64</td><td style="border:none;padding:2px 12px 2px 0;"></td><td style="border:none;padding:2px 12px 2px 0;"></td></tr></table>
 
 **Tipos de variables (comments):**
-video_id                   str
-comment_id                 str
-video_title                str
-channel_name               str
-channel_id                 str
-author_name                str
-author_channel_id          str
-text                       str
-source_query               str
-source_group               str
-dataset_sources         object
-author_handle              str
-published_text             str
-like_count_text            str
-reply_count              int64
-is_pinned                 bool
-viewer_rating          float64
-like_count_missing        bool
-like_count               int64
-looks_like_reply_id       bool
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">video_id: str</td><td style="border:none;padding:2px 12px 2px 0;">comment_id: str</td><td style="border:none;padding:2px 12px 2px 0;">video_title: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">channel_name: str</td><td style="border:none;padding:2px 12px 2px 0;">channel_id: str</td><td style="border:none;padding:2px 12px 2px 0;">author_name: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">author_channel_id: str</td><td style="border:none;padding:2px 12px 2px 0;">text: str</td><td style="border:none;padding:2px 12px 2px 0;">source_query: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">source_group: str</td><td style="border:none;padding:2px 12px 2px 0;">dataset_sources: object</td><td style="border:none;padding:2px 12px 2px 0;">author_handle: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">published_text: str</td><td style="border:none;padding:2px 12px 2px 0;">like_count_text: str</td><td style="border:none;padding:2px 12px 2px 0;">reply_count: int64</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">is_pinned: bool</td><td style="border:none;padding:2px 12px 2px 0;">viewer_rating: float64</td><td style="border:none;padding:2px 12px 2px 0;">like_count_missing: bool</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">like_count: int64</td><td style="border:none;padding:2px 12px 2px 0;">looks_like_reply_id: bool</td><td style="border:none;padding:2px 12px 2px 0;"></td></tr></table>
 
 **Valores faltantes (videos, columnas con >0):**
 published_time         13
@@ -201,52 +161,16 @@ Sports                        1              0       0.3            0.0
 Travel & Events               8              0       2.7            0.0
 
 **Consultas de busqueda (source_query, a nivel video):**
-source_query
-Municipalidad de Guatemala                20
-@GobiernodelaRepublicadeGuatema           18
-Gobierno de Guatemala                     18
-@GobiernodeGuatemala                      17
-guatemala noticias                        16
-@MunicipalidaddeGuatemala-1551            16
-Ministerio de Comunicaciones Guatemala    16
-Conred Guatemala                          15
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">Municipalidad de Guatemala: 20</td><td style="border:none;padding:2px 12px 2px 0;">@GobiernodelaRepublicadeGuatema: 18</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">Gobierno de Guatemala: 18</td><td style="border:none;padding:2px 12px 2px 0;">@GobiernodeGuatemala: 17</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">guatemala noticias: 16</td><td style="border:none;padding:2px 12px 2px 0;">@MunicipalidaddeGuatemala-1551: 16</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">Ministerio de Comunicaciones Guatemala: 16</td><td style="border:none;padding:2px 12px 2px 0;">Conred Guatemala: 15</td></tr></table>
 
 **Hashtags:** 1 hashtags en total, en 1 de 406 comentarios (el corpus casi no usa hashtags propios; los que aparecen vienen sobre todo de las descripciones/titulos de video, no de los comentarios de la audiencia).
 [('IneptoBran', 1)]
 
 **Palabras mas frecuentes (texto_limpio, 4845 tokens en total):**
-pueblo        56
-guatemala     52
-dinero        34
-solo          33
-presidente    32
-país          31
-trabajo       30
-diputados     28
-corruptos     24
-hacer         23
-diputado      22
-excelente     21
-bueno         21
-pais          21
-ser           20
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">pueblo: 56</td><td style="border:none;padding:2px 12px 2px 0;">guatemala: 52</td><td style="border:none;padding:2px 12px 2px 0;">dinero: 34</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">solo: 33</td><td style="border:none;padding:2px 12px 2px 0;">presidente: 32</td><td style="border:none;padding:2px 12px 2px 0;">país: 31</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">trabajo: 30</td><td style="border:none;padding:2px 12px 2px 0;">diputados: 28</td><td style="border:none;padding:2px 12px 2px 0;">corruptos: 24</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">hacer: 23</td><td style="border:none;padding:2px 12px 2px 0;">diputado: 22</td><td style="border:none;padding:2px 12px 2px 0;">excelente: 21</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">bueno: 21</td><td style="border:none;padding:2px 12px 2px 0;">pais: 21</td><td style="border:none;padding:2px 12px 2px 0;">ser: 20</td></tr></table>
 
 **Bigramas mas frecuentes:**
-presidente bernardo    9
-bernardo arevalo       8
-ciudad guatemala       6
-nery rodas             5
-bla bla                5
-pacto corruptos        5
-viva guatemala         4
-busquen trabajo        4
-ser diputados          4
-lleva años             4
-dinero pueblo          4
-comida nadie           4
-guatemala saludos      4
-muriendo hambre        4
-excelente trabajo      3
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">presidente bernardo: 9</td><td style="border:none;padding:2px 12px 2px 0;">bernardo arevalo: 8</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">ciudad guatemala: 6</td><td style="border:none;padding:2px 12px 2px 0;">nery rodas: 5</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">bla bla: 5</td><td style="border:none;padding:2px 12px 2px 0;">pacto corruptos: 5</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">viva guatemala: 4</td><td style="border:none;padding:2px 12px 2px 0;">busquen trabajo: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">ser diputados: 4</td><td style="border:none;padding:2px 12px 2px 0;">lleva años: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">dinero pueblo: 4</td><td style="border:none;padding:2px 12px 2px 0;">comida nadie: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">guatemala saludos: 4</td><td style="border:none;padding:2px 12px 2px 0;">muriendo hambre: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">excelente trabajo: 3</td><td style="border:none;padding:2px 12px 2px 0;"></td></tr></table>
 
 ## 3.2 Concentracion de la participacion
 

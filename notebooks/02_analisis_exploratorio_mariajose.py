@@ -94,7 +94,9 @@ cat_compare["%_comentarios"] = (cat_compare["n_comentarios"] / cat_compare["n_co
 log(cat_compare.sort_values("n_comentarios", ascending=False).to_string())
 
 log("\n**Consultas de busqueda (source_query, a nivel video):**")
-log(videos["source_query"].value_counts().head(8).to_string())
+log(du.html_columns(
+    [f"{q}: {c}" for q, c in videos["source_query"].value_counts().head(8).items()], n_cols=2
+))
 
 all_hashtags = [h for row in comments["hashtags"] for h in row]
 log(f"\n**Hashtags:** {len(all_hashtags)} hashtags en total, en "
@@ -107,7 +109,7 @@ if all_hashtags:
 all_tokens = [tok for text in m["texto_limpio"].dropna() for tok in text.split()]
 word_freq = Counter(all_tokens)
 log(f"\n**Palabras mas frecuentes (texto_limpio, {len(all_tokens)} tokens en total):**")
-log(pd.Series(dict(word_freq.most_common(15))).to_string())
+log(du.html_columns([f"{w}: {c}" for w, c in word_freq.most_common(15)], n_cols=3))
 
 bigram_freq = Counter()
 for text in m["texto_limpio"].dropna():
@@ -115,7 +117,7 @@ for text in m["texto_limpio"].dropna():
     for i in range(len(toks) - 1):
         bigram_freq[f"{toks[i]} {toks[i+1]}"] += 1
 log("\n**Bigramas mas frecuentes:**")
-log(pd.Series(dict(bigram_freq.most_common(15))).to_string())
+log(du.html_columns([f"{b}: {c}" for b, c in bigram_freq.most_common(15)], n_cols=2))
 
 # %% [markdown]
 # ## 3.2 Concentracion de la participacion

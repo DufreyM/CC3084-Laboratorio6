@@ -102,9 +102,9 @@ log("\n## 2.1 Diagnostico inicial de calidad\n")
 log(f"- Dimensiones videos: {videos.shape}, comments: {comments.shape}")
 
 log("\n**Tipos de variables (videos):**")
-log(videos.dtypes.astype(str).to_string())
+log(du.html_columns([f"{col}: {dt}" for col, dt in videos.dtypes.astype(str).items()], n_cols=3))
 log("\n**Tipos de variables (comments):**")
-log(comments.dtypes.astype(str).to_string())
+log(du.html_columns([f"{col}: {dt}" for col, dt in comments.dtypes.astype(str).items()], n_cols=3))
 
 miss_v = videos.isna().sum()
 miss_c = comments.isna().sum()

@@ -14,50 +14,10 @@
 - Dimensiones videos: (293, 22), comments: (406, 20)
 
 **Tipos de variables (videos):**
-video_id                               str
-title                                  str
-channel_name                           str
-channel_id                             str
-source_query                           str
-source_group                           str
-dataset_sources                     object
-channel_handle                         str
-published_time                         str
-view_count_text                        str
-description_snippet                    str
-video_url                              str
-query_hits                          object
-keywords                            object
-description                            str
-view_count                           int64
-publish_date           datetime64[us, UTC]
-upload_date            datetime64[us, UTC]
-category                               str
-owner_handle                           str
-n_keywords                           int64
-n_query_hits                         int64
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">video_id: str</td><td style="border:none;padding:2px 12px 2px 0;">title: str</td><td style="border:none;padding:2px 12px 2px 0;">channel_name: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">channel_id: str</td><td style="border:none;padding:2px 12px 2px 0;">source_query: str</td><td style="border:none;padding:2px 12px 2px 0;">source_group: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">dataset_sources: object</td><td style="border:none;padding:2px 12px 2px 0;">channel_handle: str</td><td style="border:none;padding:2px 12px 2px 0;">published_time: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">view_count_text: str</td><td style="border:none;padding:2px 12px 2px 0;">description_snippet: str</td><td style="border:none;padding:2px 12px 2px 0;">video_url: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">query_hits: object</td><td style="border:none;padding:2px 12px 2px 0;">keywords: object</td><td style="border:none;padding:2px 12px 2px 0;">description: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">view_count: int64</td><td style="border:none;padding:2px 12px 2px 0;">publish_date: datetime64[us, UTC]</td><td style="border:none;padding:2px 12px 2px 0;">upload_date: datetime64[us, UTC]</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">category: str</td><td style="border:none;padding:2px 12px 2px 0;">owner_handle: str</td><td style="border:none;padding:2px 12px 2px 0;">n_keywords: int64</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">n_query_hits: int64</td><td style="border:none;padding:2px 12px 2px 0;"></td><td style="border:none;padding:2px 12px 2px 0;"></td></tr></table>
 
 **Tipos de variables (comments):**
-video_id                   str
-comment_id                 str
-video_title                str
-channel_name               str
-channel_id                 str
-author_name                str
-author_channel_id          str
-text                       str
-source_query               str
-source_group               str
-dataset_sources         object
-author_handle              str
-published_text             str
-like_count_text            str
-reply_count              int64
-is_pinned                 bool
-viewer_rating          float64
-like_count_missing        bool
-like_count               int64
-looks_like_reply_id       bool
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">video_id: str</td><td style="border:none;padding:2px 12px 2px 0;">comment_id: str</td><td style="border:none;padding:2px 12px 2px 0;">video_title: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">channel_name: str</td><td style="border:none;padding:2px 12px 2px 0;">channel_id: str</td><td style="border:none;padding:2px 12px 2px 0;">author_name: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">author_channel_id: str</td><td style="border:none;padding:2px 12px 2px 0;">text: str</td><td style="border:none;padding:2px 12px 2px 0;">source_query: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">source_group: str</td><td style="border:none;padding:2px 12px 2px 0;">dataset_sources: object</td><td style="border:none;padding:2px 12px 2px 0;">author_handle: str</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">published_text: str</td><td style="border:none;padding:2px 12px 2px 0;">like_count_text: str</td><td style="border:none;padding:2px 12px 2px 0;">reply_count: int64</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">is_pinned: bool</td><td style="border:none;padding:2px 12px 2px 0;">viewer_rating: float64</td><td style="border:none;padding:2px 12px 2px 0;">like_count_missing: bool</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">like_count: int64</td><td style="border:none;padding:2px 12px 2px 0;">looks_like_reply_id: bool</td><td style="border:none;padding:2px 12px 2px 0;"></td></tr></table>
 
 **Valores faltantes (videos, columnas con >0):**
 published_time         13

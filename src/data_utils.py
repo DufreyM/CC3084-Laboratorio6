@@ -250,3 +250,20 @@ def load_processed(name):
         if col in df.columns:
             df[col] = df[col].apply(_parse_list_literal)
     return df
+
+
+def html_columns(items, n_cols=3):
+    """Arma una lista corta (ej. nombre de variable + tipo, o palabra +
+    frecuencia) como una tabla HTML de n_cols columnas en vez de una sola
+    columna larga. Se usa en los notebooks para las listas de variables y
+    otras listas de items cortos del informe final; se rellena por fila
+    (izquierda a derecha) y las celdas sobrantes quedan vacias."""
+    items = list(items)
+    n_rows = -(-len(items) // n_cols)  # techo
+    rows_html = []
+    for r in range(n_rows):
+        cells = items[r * n_cols:(r + 1) * n_cols]
+        cells += [""] * (n_cols - len(cells))
+        tds = "".join(f'<td style="border:none;padding:2px 12px 2px 0;">{c}</td>' for c in cells)
+        rows_html.append(f"<tr>{tds}</tr>")
+    return f'<table style="border:none;width:100%;">{"".join(rows_html)}</table>'

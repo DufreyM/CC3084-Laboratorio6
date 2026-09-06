@@ -28,52 +28,16 @@ Sports                        1              0       0.3            0.0
 Travel & Events               8              0       2.7            0.0
 
 **Consultas de busqueda (source_query, a nivel video):**
-source_query
-Municipalidad de Guatemala                20
-@GobiernodelaRepublicadeGuatema           18
-Gobierno de Guatemala                     18
-@GobiernodeGuatemala                      17
-guatemala noticias                        16
-@MunicipalidaddeGuatemala-1551            16
-Ministerio de Comunicaciones Guatemala    16
-Conred Guatemala                          15
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">Municipalidad de Guatemala: 20</td><td style="border:none;padding:2px 12px 2px 0;">@GobiernodelaRepublicadeGuatema: 18</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">Gobierno de Guatemala: 18</td><td style="border:none;padding:2px 12px 2px 0;">@GobiernodeGuatemala: 17</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">guatemala noticias: 16</td><td style="border:none;padding:2px 12px 2px 0;">@MunicipalidaddeGuatemala-1551: 16</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">Ministerio de Comunicaciones Guatemala: 16</td><td style="border:none;padding:2px 12px 2px 0;">Conred Guatemala: 15</td></tr></table>
 
 **Hashtags:** 1 hashtags en total, en 1 de 406 comentarios (el corpus casi no usa hashtags propios; los que aparecen vienen sobre todo de las descripciones/titulos de video, no de los comentarios de la audiencia).
 [('IneptoBran', 1)]
 
 **Palabras mas frecuentes (texto_limpio, 4845 tokens en total):**
-pueblo        56
-guatemala     52
-dinero        34
-solo          33
-presidente    32
-país          31
-trabajo       30
-diputados     28
-corruptos     24
-hacer         23
-diputado      22
-excelente     21
-bueno         21
-pais          21
-ser           20
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">pueblo: 56</td><td style="border:none;padding:2px 12px 2px 0;">guatemala: 52</td><td style="border:none;padding:2px 12px 2px 0;">dinero: 34</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">solo: 33</td><td style="border:none;padding:2px 12px 2px 0;">presidente: 32</td><td style="border:none;padding:2px 12px 2px 0;">país: 31</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">trabajo: 30</td><td style="border:none;padding:2px 12px 2px 0;">diputados: 28</td><td style="border:none;padding:2px 12px 2px 0;">corruptos: 24</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">hacer: 23</td><td style="border:none;padding:2px 12px 2px 0;">diputado: 22</td><td style="border:none;padding:2px 12px 2px 0;">excelente: 21</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">bueno: 21</td><td style="border:none;padding:2px 12px 2px 0;">pais: 21</td><td style="border:none;padding:2px 12px 2px 0;">ser: 20</td></tr></table>
 
 **Bigramas mas frecuentes:**
-presidente bernardo    9
-bernardo arevalo       8
-ciudad guatemala       6
-nery rodas             5
-bla bla                5
-pacto corruptos        5
-viva guatemala         4
-busquen trabajo        4
-ser diputados          4
-lleva años             4
-dinero pueblo          4
-comida nadie           4
-guatemala saludos      4
-muriendo hambre        4
-excelente trabajo      3
+<table style="border:none;width:100%;"><tr><td style="border:none;padding:2px 12px 2px 0;">presidente bernardo: 9</td><td style="border:none;padding:2px 12px 2px 0;">bernardo arevalo: 8</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">ciudad guatemala: 6</td><td style="border:none;padding:2px 12px 2px 0;">nery rodas: 5</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">bla bla: 5</td><td style="border:none;padding:2px 12px 2px 0;">pacto corruptos: 5</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">viva guatemala: 4</td><td style="border:none;padding:2px 12px 2px 0;">busquen trabajo: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">ser diputados: 4</td><td style="border:none;padding:2px 12px 2px 0;">lleva años: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">dinero pueblo: 4</td><td style="border:none;padding:2px 12px 2px 0;">comida nadie: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">guatemala saludos: 4</td><td style="border:none;padding:2px 12px 2px 0;">muriendo hambre: 4</td></tr><tr><td style="border:none;padding:2px 12px 2px 0;">excelente trabajo: 3</td><td style="border:none;padding:2px 12px 2px 0;"></td></tr></table>
 
 ## 3.2 Concentracion de la participacion
 
