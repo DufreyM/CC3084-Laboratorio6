@@ -1,6 +1,4 @@
-# Laboratorio 6 - Analisis de redes sociales en YouTube (Guatemala)
-
-**Equipo:** Leonardo Mejia, Maria Jose, Mia Fuentes | CC3084 - Data Science, UVG
+# Laboratorio 6
 
 **Repositorio:** https://github.com/DufreyM/CC3084-Laboratorio6
 
@@ -129,7 +127,8 @@ Una arista autor-video significa UNICAMENTE que ese autor publico al menos un co
 - ninguna relacion de amistad, seguimiento o conocimiento mutuo entre autores que comparten un video comentado; solo indica co-participacion observada en el mismo espacio publico, en la ventana de tiempo/muestra que cubre este dataset.
 
 
-![09_red_bipartita_completa.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/09_red_bipartita_completa.png)
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/09_red_bipartita_completa.png"><p class="leyenda">Figura 1. Red bipartita autor-video completa: autores (circulos pequenos) y videos (circulos grandes, etiquetados con su titulo).</p></div>
+
 
 ## 3.1 Descriptivos minimos
 
@@ -220,35 +219,43 @@ Deteccion automatica de idioma (langdetect, poco confiable en textos muy cortos,
 18 de 406 comentarios (4.4%) fueron editados despues de publicarse. Reciben en promedio 2.22 likes vs. 5.89 de los no editados. Es una tendencia descriptiva sobre una muestra pequeña (18 comentarios editados), no se puede afirmar causalidad, pero es consistente con la idea de que la edicion suele ocurrir en comentarios menos visibles/con menos interaccion previa (el autor corrige sin presion de una audiencia grande observando).
 
 
-![01_top_canales_comentarios.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/01_top_canales_comentarios.png)
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/01_top_canales_comentarios.png"><p class="leyenda">Figura 2. Top 10 canales por numero de comentarios recibidos.</p></div>
 
 
 
-![02_top_videos_comentarios.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/02_top_videos_comentarios.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/02_top_videos_comentarios.png"><p class="leyenda">Figura 3. Top 10 videos por numero de comentarios.</p></div>
 
 
 
-![03_histograma_views.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/03_histograma_views.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/03_histograma_views.png"><p class="leyenda">Figura 4. Distribucion de visualizaciones por video (293 videos, escala logaritmica).</p></div>
 
 
 
-![04_categorias_video_vs_comentario.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/04_categorias_video_vs_comentario.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/04_categorias_video_vs_comentario.png"><p class="leyenda">Figura 5. Comparacion de la categoria de video: porcentaje de videos vs. porcentaje de comentarios que aporta cada categoria.</p></div>
 
 
 
-![05_scatter_views_vs_comentarios.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/05_scatter_views_vs_comentarios.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/05_scatter_views_vs_comentarios.png"><p class="leyenda">Figura 6. Popularidad (vistas) vs. participacion (numero de comentarios) por video.</p></div>
 
 
 
-![06_top_palabras.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/06_top_palabras.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/06_top_palabras.png"><p class="leyenda">Figura 7. 15 palabras mas frecuentes en los comentarios, tras la limpieza de texto.</p></div>
 
 
 
-![07_top_bigramas.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/07_top_bigramas.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/07_top_bigramas.png"><p class="leyenda">Figura 8. 15 bigramas (pares de palabras consecutivas) mas frecuentes en los comentarios.</p></div>
 
 
 
-![08_wordcloud.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/08_wordcloud.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/08_wordcloud.png"><p class="leyenda">Figura 9. Nube de palabras de los comentarios (texto limpio), como complemento visual.</p></div>
+
 
 ## 5.1 / 5.2 Proyecciones
 
@@ -298,16 +305,16 @@ La red bipartita y sus proyecciones NO son cohesivas en el sentido de 'un solo b
 ## 6.3 Perifericos y aislados
 
 Desglose de los 10 componentes de la red bipartita:
-  Componente 0: 286 nodos (10 video(s), 276 autor(es)) -> ['Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'Arroz con pollo a la MONOPOLIO', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales', 'La cooptación de Walter Mazariegos en la USAC', 'Internet: escoger el menos malo', 'Qué rico come tu diputado', 'Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Caminar en una ciudad hecha para carros', 'Inician los trabajos de recuperación del Puente Belice II.', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt']
+  Componente 0: 286 nodos (10 video(s), 276 autor(es)) -> ['Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Caminar en una ciudad hecha para carros', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt', 'Inician los trabajos de recuperación del Puente Belice II.', 'Arroz con pollo a la MONOPOLIO', 'Internet: escoger el menos malo', 'Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'Qué rico come tu diputado', 'La cooptación de Walter Mazariegos en la USAC', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales']
   Componente 1: 26 nodos (1 video(s), 25 autor(es)) -> ['Plan 2032 Ciudad de Guatemala']
   Componente 2: 19 nodos (1 video(s), 18 autor(es)) -> ['EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
   Componente 3: 5 nodos (1 video(s), 4 autor(es)) -> ['I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.']
   Componente 4: 4 nodos (1 video(s), 3 autor(es)) -> ['10 Preguntas a un año del Paro Nacional']
   Componente 5: 3 nodos (1 video(s), 2 autor(es)) -> ['Noticiero en Directo 1 pm, 28 de Agosto de 2026']
   Componente 6: 2 nodos (1 video(s), 1 autor(es)) -> ['¿Quiénes pagan más en Centroamérica?']
-  Componente 7: 2 nodos (1 video(s), 1 autor(es)) -> ['Cruzando la ciudad a puro Transmetro']
-  Componente 8: 2 nodos (1 video(s), 1 autor(es)) -> ['SHAI WA: la vecina queer de Casa Presidencial']
-  Componente 9: 2 nodos (1 video(s), 1 autor(es)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
+  Componente 7: 2 nodos (1 video(s), 1 autor(es)) -> ['SHAI WA: la vecina queer de Casa Presidencial']
+  Componente 8: 2 nodos (1 video(s), 1 autor(es)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
+  Componente 9: 2 nodos (1 video(s), 1 autor(es)) -> ['Cruzando la ciudad a puro Transmetro']
 
 **Interpretacion:** el componente gigante (286 nodos, 10 videos, 276 autores) muestra que esos 10 videos SI comparten audiencia entre si a traves de autores puente. Los otros 9 componentes son cada uno UN SOLO video con su propio publico exclusivo (algunos grandes, como 'Plan 2032 Ciudad de Guatemala' con 25 autores, o el video de deportaciones de Telemundo con 18): ninguno de sus comentaristas aparece comentando en ningun otro video de la muestra.
 - Esto es **aislamiento observado**, no un hueco de datos: tenemos el 100% de los comentarios recolectados de esos videos y ninguno conecta con otro video.
@@ -323,15 +330,18 @@ Desglose de los 10 componentes de la red bipartita:
 - La distribucion de grado extremadamente desigual (unos pocos nodos concentran casi todas las conexiones) es consistente con lo encontrado en el ejercicio 3.2 (concentracion de la participacion en pocos videos/canales): la estructura de red confirma, desde otro angulo, el mismo patron de concentracion.
 
 
-![10_proyeccion_autor_autor.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/10_proyeccion_autor_autor.png)
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/10_proyeccion_autor_autor.png"><p class="leyenda">Figura 10. Proyeccion autor-autor completa (arista si dos autores comentaron el mismo video, peso = numero de videos compartidos).</p></div>
 
 
 
-![11_proyeccion_autor_autor_filtrada.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/11_proyeccion_autor_autor_filtrada.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/11_proyeccion_autor_autor_filtrada.png"><p class="leyenda">Figura 11. Proyeccion autor-autor filtrada: unicamente los pares de autores que comparten 2 o mas videos (participacion cruzada genuina).</p></div>
 
 
 
-![12_proyeccion_video_video.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/12_proyeccion_video_video.png)
+
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/12_proyeccion_video_video.png"><p class="leyenda">Figura 12. Proyeccion video-video (arista si dos videos comparten al menos un autor, peso = numero de autores compartidos).</p></div>
+
 
 ## Sentimiento por comentario
 
@@ -347,20 +357,20 @@ POS     78
 - Tamanos (de mayor a menor):
   Comunidad 0: 126 nodos (1 video(s)) -> ['Qué rico come tu diputado']
   Comunidad 1: 48 nodos (1 video(s)) -> ['La cooptación de Walter Mazariegos en la USAC']
-  Comunidad 2: 32 nodos (3 video(s)) -> ['Caminar en una ciudad hecha para carros', 'Arroz con pollo a la MONOPOLIO', 'Internet: escoger el menos malo']
+  Comunidad 2: 32 nodos (3 video(s)) -> ['Caminar en una ciudad hecha para carros', 'Internet: escoger el menos malo', 'Arroz con pollo a la MONOPOLIO']
   Comunidad 3: 31 nodos (1 video(s)) -> ['Inician los trabajos de recuperación del Puente Belice II.']
   Comunidad 4: 26 nodos (1 video(s)) -> ['Plan 2032 Ciudad de Guatemala']
-  Comunidad 5: 19 nodos (1 video(s)) -> ['EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
-  Comunidad 6: 19 nodos (1 video(s)) -> ['Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt']
+  Comunidad 5: 19 nodos (1 video(s)) -> ['Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt']
+  Comunidad 6: 19 nodos (1 video(s)) -> ['EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
   Comunidad 7: 14 nodos (1 video(s)) -> ['Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto']
   Comunidad 8: 8 nodos (1 video(s)) -> ['Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales']
   Comunidad 9: 8 nodos (1 video(s)) -> ['Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu']
   Comunidad 10: 5 nodos (1 video(s)) -> ['I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.']
   Comunidad 11: 4 nodos (1 video(s)) -> ['10 Preguntas a un año del Paro Nacional']
   Comunidad 12: 3 nodos (1 video(s)) -> ['Noticiero en Directo 1 pm, 28 de Agosto de 2026']
-  Comunidad 13: 2 nodos (1 video(s)) -> ['¿Quiénes pagan más en Centroamérica?']
+  Comunidad 13: 2 nodos (1 video(s)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
   Comunidad 14: 2 nodos (1 video(s)) -> ['SHAI WA: la vecina queer de Casa Presidencial']
-  Comunidad 15: 2 nodos (1 video(s)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
+  Comunidad 15: 2 nodos (1 video(s)) -> ['¿Quiénes pagan más en Centroamérica?']
   Comunidad 16: 2 nodos (1 video(s)) -> ['Cruzando la ciudad a puro Transmetro']
 
 ## 7.4 Visualizacion
@@ -385,7 +395,7 @@ Guardada en outputs/figs/13_comunidades.png: cada color es una comunidad, los no
 - Intensidad de participacion (comentarios/autor): 1.06
 
 **Comunidad 2** (32 nodos: 3 video(s), 29 autor(es))
-- Videos/canales: [{'title': 'Caminar en una ciudad hecha para carros', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Arroz con pollo a la MONOPOLIO', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Internet: escoger el menos malo', 'channel_name': 'Quorum', 'category': 'News & Politics'}]
+- Videos/canales: [{'title': 'Caminar en una ciudad hecha para carros', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Internet: escoger el menos malo', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Arroz con pollo a la MONOPOLIO', 'channel_name': 'Quorum', 'category': 'News & Politics'}]
 - Comentarios en esta comunidad: 34
 - Palabras mas frecuentes: {'excelente': 10, 'empresas': 8, 'solo': 7, 'internet': 7, 'ley': 7, 'país': 5, 'aquí': 5, 'información': 4}
 - Sentimiento: {'NEG': 0.5, 'POS': 0.26, 'NEU': 0.24}
@@ -424,14 +434,15 @@ Para **videos**: el grado (numero de autores distintos) ya identifica alcance di
 ## 8.3 Puentes y articuladores
 
 - **Puntos de articulacion totales** (nodos cuya eliminacion desconecta la red en mas piezas): 22 de 351.
-- **Videos articuladores**: 15 de 19 -> ['Caminar en una ciudad hecha para carros', 'I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.', 'Plan 2032 Ciudad de Guatemala', 'EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo', 'Inician los trabajos de recuperación del Puente Belice II.', 'Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales', 'La cooptación de Walter Mazariegos en la USAC', 'Noticiero en Directo 1 pm, 28 de Agosto de 2026', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt', 'Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Arroz con pollo a la MONOPOLIO', 'Qué rico come tu diputado', '10 Preguntas a un año del Paro Nacional', 'Internet: escoger el menos malo']
+- **Videos articuladores**: 15 de 19 -> ['Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.', 'Caminar en una ciudad hecha para carros', 'La cooptación de Walter Mazariegos en la USAC', 'Qué rico come tu diputado', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt', 'Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Inician los trabajos de recuperación del Puente Belice II.', '10 Preguntas a un año del Paro Nacional', 'Internet: escoger el menos malo', 'Plan 2032 Ciudad de Guatemala', 'Noticiero en Directo 1 pm, 28 de Agosto de 2026', 'Arroz con pollo a la MONOPOLIO', 'EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
   Esto incluye a casi todos los videos con comentarios: es un efecto esperado de la estructura bipartita en estrella (ver ejercicio 6), donde cada video es el unico puente hacia sus propios autores exclusivos, asi que removerlo siempre desconecta a esos autores del resto.
-- **Autores puente (articulacion)**: 7 -> ['@josegil3813', '@hashojea7348', '@moisesvaldez4043', '@virgiliogarcia3039', '@franciscoflores3120', '@MarcosCarillo-b1r', '@inge_vergueta']. Estos SI son un hallazgo mas interesante: son los pocos autores que unen dos videos/comunidades que de otro modo quedarian separados (coinciden con el top de intermediacion de 8.2).
+- **Autores puente (articulacion)**: 7 -> ['@franciscoflores3120', '@virgiliogarcia3039', '@josegil3813', '@moisesvaldez4043', '@MarcosCarillo-b1r', '@inge_vergueta', '@hashojea7348']. Estos SI son un hallazgo mas interesante: son los pocos autores que unen dos videos/comunidades que de otro modo quedarian separados (coinciden con el top de intermediacion de 8.2).
 
 - **Participantes recurrentes** (comentaron en mas de un video, ver ejercicio 3.5): 9 autores.
 
 
-![13_comunidades.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/13_comunidades.png)
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/13_comunidades.png"><p class="leyenda">Figura 13. Comunidades detectadas con el algoritmo de Louvain sobre la red bipartita (cada color es una comunidad distinta).</p></div>
+
 
 ## 9.1 Resultados generales
 
@@ -485,7 +496,8 @@ Ya reportado en outputs/reporte_ejercicio_7_8.md: la Comunidad 0 ('Que rico come
 - El video de deportaciones de Telemundo (con comentarios en ingles, ver ejercicio 3.6) tambien es mayoritariamente negativo (64%), pero con un componente de discusion polarizada visible en las respuestas en ingles captadas en el dataset (ej. discusion entre 'eugeneramirez4405' y 'rosadiaz6945').
 
 
-![14_sentimiento_por_video.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/14_sentimiento_por_video.png)
+<div class="figura"><img src="C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/14_sentimiento_por_video.png"><p class="leyenda">Figura 14. Proporcion de comentarios negativos, neutros y positivos por video (videos con 10 o mas comentarios).</p></div>
+
 
 
 ## 10. Interpretacion, limitaciones y conclusiones

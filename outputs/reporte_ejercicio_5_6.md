@@ -46,16 +46,16 @@ La red bipartita y sus proyecciones NO son cohesivas en el sentido de 'un solo b
 ## 6.3 Perifericos y aislados
 
 Desglose de los 10 componentes de la red bipartita:
-  Componente 0: 286 nodos (10 video(s), 276 autor(es)) -> ['Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'Arroz con pollo a la MONOPOLIO', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales', 'La cooptación de Walter Mazariegos en la USAC', 'Internet: escoger el menos malo', 'Qué rico come tu diputado', 'Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Caminar en una ciudad hecha para carros', 'Inician los trabajos de recuperación del Puente Belice II.', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt']
+  Componente 0: 286 nodos (10 video(s), 276 autor(es)) -> ['Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Caminar en una ciudad hecha para carros', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt', 'Inician los trabajos de recuperación del Puente Belice II.', 'Arroz con pollo a la MONOPOLIO', 'Internet: escoger el menos malo', 'Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'Qué rico come tu diputado', 'La cooptación de Walter Mazariegos en la USAC', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales']
   Componente 1: 26 nodos (1 video(s), 25 autor(es)) -> ['Plan 2032 Ciudad de Guatemala']
   Componente 2: 19 nodos (1 video(s), 18 autor(es)) -> ['EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
   Componente 3: 5 nodos (1 video(s), 4 autor(es)) -> ['I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.']
   Componente 4: 4 nodos (1 video(s), 3 autor(es)) -> ['10 Preguntas a un año del Paro Nacional']
   Componente 5: 3 nodos (1 video(s), 2 autor(es)) -> ['Noticiero en Directo 1 pm, 28 de Agosto de 2026']
   Componente 6: 2 nodos (1 video(s), 1 autor(es)) -> ['¿Quiénes pagan más en Centroamérica?']
-  Componente 7: 2 nodos (1 video(s), 1 autor(es)) -> ['Cruzando la ciudad a puro Transmetro']
-  Componente 8: 2 nodos (1 video(s), 1 autor(es)) -> ['SHAI WA: la vecina queer de Casa Presidencial']
-  Componente 9: 2 nodos (1 video(s), 1 autor(es)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
+  Componente 7: 2 nodos (1 video(s), 1 autor(es)) -> ['SHAI WA: la vecina queer de Casa Presidencial']
+  Componente 8: 2 nodos (1 video(s), 1 autor(es)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
+  Componente 9: 2 nodos (1 video(s), 1 autor(es)) -> ['Cruzando la ciudad a puro Transmetro']
 
 **Interpretacion:** el componente gigante (286 nodos, 10 videos, 276 autores) muestra que esos 10 videos SI comparten audiencia entre si a traves de autores puente. Los otros 9 componentes son cada uno UN SOLO video con su propio publico exclusivo (algunos grandes, como 'Plan 2032 Ciudad de Guatemala' con 25 autores, o el video de deportaciones de Telemundo con 18): ninguno de sus comentaristas aparece comentando en ningun otro video de la muestra.
 - Esto es **aislamiento observado**, no un hueco de datos: tenemos el 100% de los comentarios recolectados de esos videos y ninguno conecta con otro video.

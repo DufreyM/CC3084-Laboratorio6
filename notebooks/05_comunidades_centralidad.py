@@ -135,7 +135,7 @@ plt.legend(scatterpoints=1, fontsize=7, loc="lower left", ncol=2)
 plt.title(f"Comunidades (Louvain, modularidad={mod:.3f}) sobre la red bipartita")
 plt.axis("off")
 plt.tight_layout()
-plt.savefig(FIGS / "13_comunidades.png", dpi=130)
+plt.savefig(FIGS / "13_comunidades.png", dpi=130, bbox_inches="tight", pad_inches=0.3)
 plt.close()
 
 log("\n## 7.4 Visualizacion\n")

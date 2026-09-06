@@ -118,7 +118,7 @@ plot_df[["NEG", "NEU", "POS"]].plot(
 plt.xlabel("proporcion de comentarios")
 plt.title("Sentimiento por video (videos con >=10 comentarios)")
 plt.tight_layout()
-plt.savefig(FIGS / "14_sentimiento_por_video.png", dpi=130)
+plt.savefig(FIGS / "14_sentimiento_por_video.png", dpi=130, bbox_inches="tight", pad_inches=0.3)
 plt.close()
 
 log("\nGrafico guardado en outputs/figs/14_sentimiento_por_video.png.")

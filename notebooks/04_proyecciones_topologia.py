@@ -107,41 +107,40 @@ du.save_processed(
 # ## 5.4 Visualizacion de las proyecciones
 
 # %%
-plt.figure(figsize=(10, 9))
-pos = nx.spring_layout(author_proj, k=0.05, seed=7)
-weights = [author_proj[u][v]["weight"] for u, v in author_proj.edges()]
-nx.draw_networkx_edges(author_proj, pos, alpha=0.05, width=0.3)
-nx.draw_networkx_nodes(author_proj, pos, node_size=15, node_color="#38a169")
-plt.title("Proyeccion autor-autor (peso = videos compartidos)")
-plt.axis("off")
-plt.tight_layout()
-plt.savefig(FIGS / "10_proyeccion_autor_autor.png", dpi=130)
-plt.close()
+fig, ax = plt.subplots(figsize=(7, 6))
+pos = nx.spring_layout(author_proj, k=0.15, seed=7)
+nx.draw_networkx_edges(author_proj, pos, alpha=0.15, width=0.5, ax=ax)
+nx.draw_networkx_nodes(author_proj, pos, node_size=35, node_color="#38a169", ax=ax)
+ax.set_title("Proyeccion autor-autor (peso = videos compartidos)")
+ax.axis("off")
+ax.margins(0.1)
+fig.savefig(FIGS / "10_proyeccion_autor_autor.png", dpi=130, bbox_inches="tight", pad_inches=0.3)
+plt.close(fig)
 
 strong_pairs = [(u, v) for u, v, d in author_proj.edges(data=True) if d["weight"] >= 2]
 strong_sub = author_proj.edge_subgraph(strong_pairs).copy() if strong_pairs else nx.Graph()
-plt.figure(figsize=(5, 4))
+fig, ax = plt.subplots(figsize=(4, 3))
 pos2 = nx.spring_layout(strong_sub, seed=1)
-nx.draw(strong_sub, pos2, with_labels=False, node_color="#2c7a7b", node_size=200,
-        width=[strong_sub[u][v]["weight"] for u, v in strong_sub.edges()])
-plt.title("Autor-autor: SOLO pares que comparten >=2 videos\n(participacion cruzada genuina)")
-plt.tight_layout()
-plt.savefig(FIGS / "11_proyeccion_autor_autor_filtrada.png", dpi=130)
-plt.close()
+nx.draw(strong_sub, pos2, with_labels=False, node_color="#2c7a7b", node_size=250,
+        width=[strong_sub[u][v]["weight"] for u, v in strong_sub.edges()], ax=ax)
+ax.set_title("Autor-autor: SOLO pares que comparten\n2+ videos (participacion cruzada genuina)")
+ax.margins(0.2)
+fig.savefig(FIGS / "11_proyeccion_autor_autor_filtrada.png", dpi=130, bbox_inches="tight", pad_inches=0.3)
+plt.close(fig)
 
-plt.figure(figsize=(9, 7))
+fig, ax = plt.subplots(figsize=(8, 6.5))
 pos3 = nx.spring_layout(video_proj, seed=3, k=0.8)
 node_sizes = [300 + 40 * video_proj.degree(n) for n in video_proj.nodes()]
 edge_w = [video_proj[u][v]["weight"] for u, v in video_proj.edges()]
-nx.draw_networkx_edges(video_proj, pos3, width=[w * 1.2 for w in edge_w], alpha=0.5)
-nx.draw_networkx_nodes(video_proj, pos3, node_size=node_sizes, node_color="#c53030")
+nx.draw_networkx_edges(video_proj, pos3, width=[w * 1.2 for w in edge_w], alpha=0.5, ax=ax)
+nx.draw_networkx_nodes(video_proj, pos3, node_size=node_sizes, node_color="#c53030", ax=ax)
 labels = {n: videos.set_index("video_id").loc[n, "title"][:20] for n in video_proj.nodes()}
-nx.draw_networkx_labels(video_proj, pos3, labels=labels, font_size=7)
-plt.title("Proyeccion video-video (peso = autores compartidos)")
-plt.axis("off")
-plt.tight_layout()
-plt.savefig(FIGS / "12_proyeccion_video_video.png", dpi=130)
-plt.close()
+nx.draw_networkx_labels(video_proj, pos3, labels=labels, font_size=7, ax=ax)
+ax.set_title("Proyeccion video-video (peso = autores compartidos)")
+ax.axis("off")
+ax.margins(0.1)
+fig.savefig(FIGS / "12_proyeccion_video_video.png", dpi=130, bbox_inches="tight", pad_inches=0.3)
+plt.close(fig)
 
 log("\n## 5.4 Visualizaciones\n")
 log("Se guardaron 3 figuras: (10) la proyeccion autor-autor completa, que se ve "

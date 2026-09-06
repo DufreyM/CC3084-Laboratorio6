@@ -131,32 +131,68 @@ print(f"Ejercicio 10 guardado en {path_10}")
 # %%
 FIGS = OUTPUTS / "figs"
 
+_fig_counter = [0]
 
-def img(name):
-    return f'\n\n![{name}]({(FIGS / name).as_posix()})\n'
+
+def fig(name, caption):
+    """Imagen + leyenda numerada debajo (Figura N. <caption>), como bloque HTML
+    para que quede centrada y con estilo de leyenda sin depender de markdown."""
+    _fig_counter[0] += 1
+    src = (FIGS / name).as_posix()
+    return (
+        f'\n\n<div class="figura">'
+        f'<img src="{src}">'
+        f'<p class="leyenda">Figura {_fig_counter[0]}. {caption}</p>'
+        f"</div>\n\n"
+    )
 
 
 orden = [
     ("4", "Ejercicio 4 - Construccion de la red bipartita autor-video",
-     [img("09_red_bipartita_completa.png")]),
+     [fig("09_red_bipartita_completa.png",
+          "Red bipartita autor-video completa: autores (circulos pequenos) y "
+          "videos (circulos grandes, etiquetados con su titulo).")]),
     ("3", "Ejercicio 3 - Analisis exploratorio",
-     [img(f"{n:02d}_{s}.png") for n, s in [
-         (1, "top_canales_comentarios"), (2, "top_videos_comentarios"),
-         (3, "histograma_views"), (4, "categorias_video_vs_comentario"),
-         (5, "scatter_views_vs_comentarios"), (6, "top_palabras"),
-         (7, "top_bigramas"), (8, "wordcloud")]]),
+     [fig("01_top_canales_comentarios.png",
+          "Top 10 canales por numero de comentarios recibidos."),
+      fig("02_top_videos_comentarios.png",
+          "Top 10 videos por numero de comentarios."),
+      fig("03_histograma_views.png",
+          "Distribucion de visualizaciones por video (293 videos, escala logaritmica)."),
+      fig("04_categorias_video_vs_comentario.png",
+          "Comparacion de la categoria de video: porcentaje de videos vs. "
+          "porcentaje de comentarios que aporta cada categoria."),
+      fig("05_scatter_views_vs_comentarios.png",
+          "Popularidad (vistas) vs. participacion (numero de comentarios) por video."),
+      fig("06_top_palabras.png",
+          "15 palabras mas frecuentes en los comentarios, tras la limpieza de texto."),
+      fig("07_top_bigramas.png",
+          "15 bigramas (pares de palabras consecutivas) mas frecuentes en los comentarios."),
+      fig("08_wordcloud.png",
+          "Nube de palabras de los comentarios (texto limpio), como complemento visual.")]),
     ("5_6", "Ejercicios 5 y 6 - Proyecciones, topologia y fragmentacion",
-     [img("10_proyeccion_autor_autor.png"), img("11_proyeccion_autor_autor_filtrada.png"),
-      img("12_proyeccion_video_video.png")]),
+     [fig("10_proyeccion_autor_autor.png",
+          "Proyeccion autor-autor completa (arista si dos autores comentaron el "
+          "mismo video, peso = numero de videos compartidos)."),
+      fig("11_proyeccion_autor_autor_filtrada.png",
+          "Proyeccion autor-autor filtrada: unicamente los pares de autores que "
+          "comparten 2 o mas videos (participacion cruzada genuina)."),
+      fig("12_proyeccion_video_video.png",
+          "Proyeccion video-video (arista si dos videos comparten al menos un "
+          "autor, peso = numero de autores compartidos).")]),
     ("7_8", "Ejercicios 7 y 8 - Comunidades, centralidad y puentes",
-     [img("13_comunidades.png")]),
-    ("9", "Ejercicio 9 - Contenido y sentimiento", [img("14_sentimiento_por_video.png")]),
+     [fig("13_comunidades.png",
+          "Comunidades detectadas con el algoritmo de Louvain sobre la red "
+          "bipartita (cada color es una comunidad distinta).")]),
+    ("9", "Ejercicio 9 - Contenido y sentimiento",
+     [fig("14_sentimiento_por_video.png",
+          "Proporcion de comentarios negativos, neutros y positivos por video "
+          "(videos con 10 o mas comentarios).")]),
     ("10", "Ejercicio 10 - Interpretacion, limitaciones y conclusiones", []),
 ]
 
 partes = [
-    "# Laboratorio 6 - Analisis de redes sociales en YouTube (Guatemala)\n",
-    "**Equipo:** Leonardo Mejia, Maria Jose, Mia Fuentes | CC3084 - Data Science, UVG\n",
+    "# Laboratorio 6\n",
     "**Repositorio:** https://github.com/DufreyM/CC3084-Laboratorio6\n",
     "\n## Ejercicios 1 y 2 - Carga, integracion, calidad y limpieza\n",
 ]
@@ -200,31 +236,49 @@ from xhtml2pdf import pisa
 
 caratula = """
 <div style="text-align: center; margin-top: 60pt;">
-<p style="font-size: 15pt; font-weight: bold;">UNIVERSIDAD DEL VALLE DE GUATEMALA</p>
-<p style="font-size: 13pt;">Data Science</p>
-<p style="font-size: 13pt;">Seccion - 20</p>
-<p style="margin-top: 90pt; font-size: 16pt; font-weight: bold;">Laboratorio 6</p>
-<p style="font-size: 14pt;">Informe</p>
-<p style="margin-top: 90pt; font-size: 12pt;">Leonardo Dufrey Mejia Mejia<br>
+<p style="text-align: center; font-size: 15pt; font-weight: bold;">UNIVERSIDAD DEL VALLE DE GUATEMALA</p>
+<p style="text-align: center; font-size: 13pt;">Data Science</p>
+<p style="text-align: center; font-size: 13pt;">Seccion - 20</p>
+<p style="text-align: center; margin-top: 70pt; font-size: 16pt; font-weight: bold;">Laboratorio 6</p>
+<p style="text-align: center; font-size: 14pt;">Informe</p>
+<p style="text-align: center; font-size: 12pt;">Analisis de redes sociales en YouTube (Guatemala)</p>
+<p style="text-align: center; margin-top: 70pt; font-size: 12pt;">Leonardo Dufrey Mejia Mejia<br>
 Maria Jose Giron Isidro<br>
 Mia Alejandra Fuentes Merida</p>
-<p style="margin-top: 90pt; font-size: 12pt;">26 de julio de 2026</p>
+<p style="text-align: center; margin-top: 70pt; font-size: 12pt;">26 de julio de 2026</p>
 </div>
 <p style="page-break-after: always;"></p>
 """
 
 html_body = md_lib.markdown(informe_md, extensions=["tables", "nl2br"])
 html_full = f"""<html><head><meta charset="utf-8"><style>
+@page {{
+    size: letter portrait;
+    margin: 2.2cm 2cm 2cm 2cm;
+    @frame footer_frame {{
+        -pdf-frame-content: footer_content;
+        bottom: 1cm; margin-left: 2cm; margin-right: 2cm; height: 1cm;
+    }}
+}}
 * {{ color: #000000 !important; }}
-body {{ font-family: "Times New Roman", Times, serif; font-size: 12pt; line-height: 1.4;
+body {{ font-family: "Times New Roman", Times, serif; font-size: 12pt; line-height: 1.45;
         color: #000000; background: #ffffff; }}
-h1 {{ font-size: 20pt; font-weight: bold; margin-top: 16pt; }}
-h2 {{ font-size: 16pt; font-weight: bold; margin-top: 16pt; }}
-h3 {{ font-size: 13pt; font-weight: bold; margin-top: 12pt; }}
-img {{ max-width: 480px; display: block; margin: 8px auto; }}
-table {{ border-collapse: collapse; width: 100%; font-size: 11pt; }}
-td, th {{ border: 1px solid #000000; padding: 3px; }}
-</style></head><body>{caratula}{html_body}</body></html>"""
+h1 {{ font-size: 20pt; font-weight: bold; margin-top: 16pt; margin-bottom: 10pt; }}
+h2 {{ font-size: 16pt; font-weight: bold; margin-top: 20pt; margin-bottom: 8pt; }}
+h3 {{ font-size: 13pt; font-weight: bold; margin-top: 14pt; margin-bottom: 6pt; }}
+p, li {{ text-align: justify; margin-bottom: 6pt; }}
+ul, ol {{ margin-bottom: 10pt; }}
+.figura {{ text-align: center; margin: 16pt 0; }}
+.figura img {{ max-width: 420px; }}
+.leyenda {{ font-style: italic; font-size: 10pt; text-align: center; margin-top: 4pt; }}
+table {{ border-collapse: collapse; width: 100%; font-size: 11pt; margin-bottom: 10pt; }}
+td, th {{ border: 1px solid #000000; padding: 3px; text-align: left; }}
+#footer_content {{ text-align: center; font-size: 9pt; }}
+</style></head><body>
+{caratula}
+<div id="footer_content">Pagina <pdf:pagenumber> de <pdf:pagecount></div>
+{html_body}
+</body></html>"""
 
 pdf_path = OUTPUTS / "informe_final.pdf"
 with open(pdf_path, "wb") as f:

@@ -12,20 +12,20 @@ POS     78
 - Tamanos (de mayor a menor):
   Comunidad 0: 126 nodos (1 video(s)) -> ['Qué rico come tu diputado']
   Comunidad 1: 48 nodos (1 video(s)) -> ['La cooptación de Walter Mazariegos en la USAC']
-  Comunidad 2: 32 nodos (3 video(s)) -> ['Caminar en una ciudad hecha para carros', 'Arroz con pollo a la MONOPOLIO', 'Internet: escoger el menos malo']
+  Comunidad 2: 32 nodos (3 video(s)) -> ['Caminar en una ciudad hecha para carros', 'Internet: escoger el menos malo', 'Arroz con pollo a la MONOPOLIO']
   Comunidad 3: 31 nodos (1 video(s)) -> ['Inician los trabajos de recuperación del Puente Belice II.']
   Comunidad 4: 26 nodos (1 video(s)) -> ['Plan 2032 Ciudad de Guatemala']
-  Comunidad 5: 19 nodos (1 video(s)) -> ['EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
-  Comunidad 6: 19 nodos (1 video(s)) -> ['Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt']
+  Comunidad 5: 19 nodos (1 video(s)) -> ['Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt']
+  Comunidad 6: 19 nodos (1 video(s)) -> ['EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
   Comunidad 7: 14 nodos (1 video(s)) -> ['Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto']
   Comunidad 8: 8 nodos (1 video(s)) -> ['Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales']
   Comunidad 9: 8 nodos (1 video(s)) -> ['Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu']
   Comunidad 10: 5 nodos (1 video(s)) -> ['I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.']
   Comunidad 11: 4 nodos (1 video(s)) -> ['10 Preguntas a un año del Paro Nacional']
   Comunidad 12: 3 nodos (1 video(s)) -> ['Noticiero en Directo 1 pm, 28 de Agosto de 2026']
-  Comunidad 13: 2 nodos (1 video(s)) -> ['¿Quiénes pagan más en Centroamérica?']
+  Comunidad 13: 2 nodos (1 video(s)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
   Comunidad 14: 2 nodos (1 video(s)) -> ['SHAI WA: la vecina queer de Casa Presidencial']
-  Comunidad 15: 2 nodos (1 video(s)) -> ['Edén por Salud: empleo inclusivo para personas con discapacidad en Antigua | Super - Episodio 2']
+  Comunidad 15: 2 nodos (1 video(s)) -> ['¿Quiénes pagan más en Centroamérica?']
   Comunidad 16: 2 nodos (1 video(s)) -> ['Cruzando la ciudad a puro Transmetro']
 
 ## 7.4 Visualizacion
@@ -50,7 +50,7 @@ Guardada en outputs/figs/13_comunidades.png: cada color es una comunidad, los no
 - Intensidad de participacion (comentarios/autor): 1.06
 
 **Comunidad 2** (32 nodos: 3 video(s), 29 autor(es))
-- Videos/canales: [{'title': 'Caminar en una ciudad hecha para carros', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Arroz con pollo a la MONOPOLIO', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Internet: escoger el menos malo', 'channel_name': 'Quorum', 'category': 'News & Politics'}]
+- Videos/canales: [{'title': 'Caminar en una ciudad hecha para carros', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Internet: escoger el menos malo', 'channel_name': 'Quorum', 'category': 'News & Politics'}, {'title': 'Arroz con pollo a la MONOPOLIO', 'channel_name': 'Quorum', 'category': 'News & Politics'}]
 - Comentarios en esta comunidad: 34
 - Palabras mas frecuentes: {'excelente': 10, 'empresas': 8, 'solo': 7, 'internet': 7, 'ley': 7, 'país': 5, 'aquí': 5, 'información': 4}
 - Sentimiento: {'NEG': 0.5, 'POS': 0.26, 'NEU': 0.24}
@@ -89,8 +89,8 @@ Para **videos**: el grado (numero de autores distintos) ya identifica alcance di
 ## 8.3 Puentes y articuladores
 
 - **Puntos de articulacion totales** (nodos cuya eliminacion desconecta la red en mas piezas): 22 de 351.
-- **Videos articuladores**: 15 de 19 -> ['Caminar en una ciudad hecha para carros', 'I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.', 'Plan 2032 Ciudad de Guatemala', 'EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo', 'Inician los trabajos de recuperación del Puente Belice II.', 'Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales', 'La cooptación de Walter Mazariegos en la USAC', 'Noticiero en Directo 1 pm, 28 de Agosto de 2026', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt', 'Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Arroz con pollo a la MONOPOLIO', 'Qué rico come tu diputado', '10 Preguntas a un año del Paro Nacional', 'Internet: escoger el menos malo']
+- **Videos articuladores**: 15 de 19 -> ['Capturan a presuntos delincuentes disfrazados de mujer señalados de cometer asalto', 'I’x K’at: el primer equipo guatemalteco de pelota maya, conformado únicamente por mujeres.', 'Caminar en una ciudad hecha para carros', 'La cooptación de Walter Mazariegos en la USAC', 'Qué rico come tu diputado', 'Bloqueos en Guatemala este 31 de agosto por alza en combustibles afectan rutas principales', 'Conferencia de Prensa del Gobierno de Guatemala. #LaRondaGt', 'Capturan a ladrón que había quedado grabado mientras robaba en una parroquia de Retalhuleu', 'Inician los trabajos de recuperación del Puente Belice II.', '10 Preguntas a un año del Paro Nacional', 'Internet: escoger el menos malo', 'Plan 2032 Ciudad de Guatemala', 'Noticiero en Directo 1 pm, 28 de Agosto de 2026', 'Arroz con pollo a la MONOPOLIO', 'EE.UU. envía a mexicanos deportados a Guatemala antes de su regreso a México | Noticias Telemundo']
   Esto incluye a casi todos los videos con comentarios: es un efecto esperado de la estructura bipartita en estrella (ver ejercicio 6), donde cada video es el unico puente hacia sus propios autores exclusivos, asi que removerlo siempre desconecta a esos autores del resto.
-- **Autores puente (articulacion)**: 7 -> ['@josegil3813', '@hashojea7348', '@moisesvaldez4043', '@virgiliogarcia3039', '@franciscoflores3120', '@MarcosCarillo-b1r', '@inge_vergueta']. Estos SI son un hallazgo mas interesante: son los pocos autores que unen dos videos/comunidades que de otro modo quedarian separados (coinciden con el top de intermediacion de 8.2).
+- **Autores puente (articulacion)**: 7 -> ['@franciscoflores3120', '@virgiliogarcia3039', '@josegil3813', '@moisesvaldez4043', '@MarcosCarillo-b1r', '@inge_vergueta', '@hashojea7348']. Estos SI son un hallazgo mas interesante: son los pocos autores que unen dos videos/comunidades que de otro modo quedarian separados (coinciden con el top de intermediacion de 8.2).
 
 - **Participantes recurrentes** (comentaron en mas de un video, ver ejercicio 3.5): 9 autores.
