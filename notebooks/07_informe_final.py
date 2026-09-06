@@ -109,7 +109,7 @@ excepcion notable de una comunidad que fusiona 3 videos de contenido de
 consumidor/servicios de Quorum, sugiriendo una audiencia fiel a ese tipo de
 periodismo especifico, distinta de la audiencia mas amplia y volatil del
 escandalo viral. La centralidad (ejercicio 8) identifica un puñado de autores y
-videos "puente" cuya remocion fragmentaria aun mas la red -- perfiles utiles
+videos "puente" cuya remocion fragmentaria aun mas la red, perfiles utiles
 para entender que sostiene la (poca) conectividad del dataset. El analisis de
 sentimiento (ejercicio 9) no contradice nada de esto: el tono negativo
 predominante se explica mejor por que TEMA se recolecto (corrupcion, gasto
@@ -161,7 +161,6 @@ partes = [
     "\n## Ejercicios 1 y 2 - Carga, integracion, calidad y limpieza\n",
 ]
 partes.append((OUTPUTS / "reporte_ejercicio_1_2.md").read_text(encoding="utf-8"))
-partes.append("\n---\n")
 
 for suf, titulo, imagenes in orden:
     p = OUTPUTS / f"reporte_ejercicio_{suf}.md"
@@ -171,31 +170,45 @@ for suf, titulo, imagenes in orden:
             partes.append(f"## {titulo}\n")
         partes.append(contenido)
         partes.extend(imagenes)
-        partes.append("\n---\n")
 
 informe_md = "\n".join(partes)
+
+# %% [markdown]
+# ## Limpieza tipografica: sin backticks, sin "~", sin guiones/rayas largas ni
+# lineas horizontales de separacion (todo debe leerse como texto corrido normal).
+
+# %%
+import re
+
+informe_md = informe_md.replace("`", "")
+informe_md = re.sub(r"(?m)^-{3,}\s*$", "", informe_md)  # lineas "---" (rayas horizontales)
+informe_md = re.sub(r"[‒–—―]", ",", informe_md)  # em/en dash unicode
+informe_md = re.sub(r"\s+--+\s+", ", ", informe_md)  # "--" usado como raya
+informe_md = re.sub(r"~(\d)", r"aprox. \1", informe_md)  # "~304" -> "aprox. 304"
+informe_md = informe_md.replace("~", "")
+
 informe_path = OUTPUTS / "informe_final.md"
 informe_path.write_text(informe_md, encoding="utf-8")
 print(f"Informe consolidado guardado en {informe_path} ({len(informe_md)} caracteres)")
 
 # %% [markdown]
-# ## Conversion a PDF
+# ## Conversion a PDF: Times New Roman, blanco y negro, titulos en negrita negra
 
 # %%
 import markdown as md_lib
 from xhtml2pdf import pisa
 
-html_body = md_lib.markdown(informe_md, extensions=["tables", "fenced_code", "nl2br"])
+html_body = md_lib.markdown(informe_md, extensions=["tables", "nl2br"])
 html_full = f"""<html><head><meta charset="utf-8"><style>
-body {{ font-family: Helvetica, Arial, sans-serif; font-size: 10.5pt; line-height: 1.4; }}
-h1 {{ font-size: 18pt; color: #1a202c; }}
-h2 {{ font-size: 14pt; color: #2b6cb0; margin-top: 18pt; border-bottom: 1px solid #ccc; }}
-h3 {{ font-size: 12pt; color: #2c5282; }}
+* {{ color: #000000 !important; }}
+body {{ font-family: "Times New Roman", Times, serif; font-size: 12pt; line-height: 1.4;
+        color: #000000; background: #ffffff; }}
+h1 {{ font-size: 20pt; font-weight: bold; margin-top: 16pt; }}
+h2 {{ font-size: 16pt; font-weight: bold; margin-top: 16pt; }}
+h3 {{ font-size: 13pt; font-weight: bold; margin-top: 12pt; }}
 img {{ max-width: 480px; display: block; margin: 8px auto; }}
-pre, code {{ font-size: 8.5pt; background: #f5f5f5; white-space: pre-wrap; }}
-table {{ border-collapse: collapse; width: 100%; font-size: 8pt; }}
-td, th {{ border: 1px solid #ccc; padding: 3px; }}
-hr {{ border: none; border-top: 1px solid #ccc; margin: 14pt 0; }}
+table {{ border-collapse: collapse; width: 100%; font-size: 11pt; }}
+td, th {{ border: 1px solid #000000; padding: 3px; }}
 </style></head><body>{html_body}</body></html>"""
 
 pdf_path = OUTPUTS / "informe_final.pdf"

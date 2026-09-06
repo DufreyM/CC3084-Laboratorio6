@@ -102,14 +102,14 @@ viewer_rating    406
 
 ## 2.4 Conversion de variables de conteo
 
-- `view_count_text` (ej. '2,390 vistas') NO se reparsea: el dataset ya trae `view_count` numerico (recomendado explicitamente por el enunciado); se verifico que ambas fuentes son consistentes en orden de magnitud.
-- `like_count_text` se convierte a `like_count` (entero): se quitan separadores de miles (',') y espacios; los valores vacios (' ') se interpretan como 0 'me gusta' (YouTube no muestra el contador cuando es 0). Se agrega la bandera booleana `like_count_missing` para distinguir estas filas de un 0 explicito.
+- view_count_text (ej. '2,390 vistas') NO se reparsea: el dataset ya trae view_count numerico (recomendado explicitamente por el enunciado); se verifico que ambas fuentes son consistentes en orden de magnitud.
+- like_count_text se convierte a like_count (entero): se quitan separadores de miles (',') y espacios; los valores vacios (' ') se interpretan como 0 'me gusta' (YouTube no muestra el contador cuando es 0). Se agrega la bandera booleana like_count_missing para distinguir estas filas de un 0 explicito.
   -> 189 de 406 comentarios (46.6%) tenian like_count_text vacio.
-- `query_hits`, `keywords` (videos) y `dataset_sources` (ambos archivos) se convierten de texto con forma de lista/lista separada por '|' a listas de Python reales.
+- query_hits, keywords (videos) y dataset_sources (ambos archivos) se convierten de texto con forma de lista/lista separada por '|' a listas de Python reales.
 
 ## 2.5 texto_original y texto_limpio
 
-`texto_original` se conserva intacto (con mayusculas, puntuacion y emojis) porque el analisis de sentimiento (ejercicio 9) rinde mejor con esas senales. `texto_limpio` es la version normalizada usada para frecuencias, n-gramas y nube de palabras.
+texto_original se conserva intacto (con mayusculas, puntuacion y emojis) porque el analisis de sentimiento (ejercicio 9) rinde mejor con esas senales. texto_limpio es la version normalizada usada para frecuencias, n-gramas y nube de palabras.
 
 ## 2.7 Efecto cuantificado de la limpieza
 
@@ -125,14 +125,11 @@ viewer_rating    406
 - videos_clean.csv
 - comments_clean.csv (incluye texto_original, texto_limpio, hashtags, mentions, emojis)
 - merged_clean.csv (comments + atributos de video, listo para EDA y para construir la red)
-
----
-
 ## 4.1 / 4.2 Construccion de la red bipartita
 
 - Pares autor-video distintos (aristas): 343
 - Aristas con peso > 1 (mismo autor con mas de un comentario principal en el mismo video): 40 de 343 (11.7%)
-  Nota de interpretacion: parte de estos pesos altos coincide con videos donde ya se detecto (ejercicio 2.1) un numero alto de `comment_id` con formato de respuesta de YouTube (`looks_like_reply_id`); es probable que reflejen a una misma persona respondiendo varias veces DENTRO de un hilo de discusion (ej. 6 comentarios de un mismo autor en el video del Puente Belice II), no 6 comentarios independientes sin relacion entre si.
+  Nota de interpretacion: parte de estos pesos altos coincide con videos donde ya se detecto (ejercicio 2.1) un numero alto de comment_id con formato de respuesta de YouTube (looks_like_reply_id); es probable que reflejen a una misma persona respondiendo varias veces DENTRO de un hilo de discusion (ej. 6 comentarios de un mismo autor en el video del Puente Belice II), no 6 comentarios independientes sin relacion entre si.
 
 - Nodos tipo autor: 332
 - Nodos tipo video: 19
@@ -173,9 +170,6 @@ Una arista autor-video significa UNICAMENTE que ese autor publico al menos un co
 
 
 ![09_red_bipartita_completa.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/09_red_bipartita_completa.png)
-
-
----
 
 ## 3.1 Descriptivos minimos
 
@@ -263,8 +257,8 @@ excelente trabajo      3
 ## 3.3 Popularidad vs. participacion
 
 - Correlacion de Spearman (por rango) entre view_count y numero de comentarios, a nivel video (solo los 19 con >=1 comentario): 0.81. Correlacion de Pearson (lineal): 0.07.
-- La diferencia entre ambas es el hallazgo interesante: en general, un video con mas vistas SI tiende a tener mas comentarios (Spearman alto), pero la relacion lineal es casi nula porque dos videos rompen el patron: 'Plan 2032 Ciudad de Guatemala' tiene, por mucho, las mas vistas (~304 mil) pero un numero de comentarios apenas mediano (25); y 'Que rico come tu diputado' (Quorum) tiene, por mucho, mas comentarios que cualquier otro (161) con vistas relativamente bajas (~11.8 mil). Esto sugiere que las vistas miden alcance pasivo mientras que comentar refleja un tipo distinto de involucramiento (indignacion/controversia politica, en el caso de Quorum), que no escala linealmente con el alcance.
-- Limitaciones de ambos conteos: `view_count` se congelo en el momento de la recoleccion (no representa vistas actuales) y los comentarios en este dataset son una MUESTRA (solo 19 de 293 videos tienen algun comentario), no el total real de comentarios de cada video en YouTube.
+- La diferencia entre ambas es el hallazgo interesante: en general, un video con mas vistas SI tiende a tener mas comentarios (Spearman alto), pero la relacion lineal es casi nula porque dos videos rompen el patron: 'Plan 2032 Ciudad de Guatemala' tiene, por mucho, las mas vistas (aprox. 304 mil) pero un numero de comentarios apenas mediano (25); y 'Que rico come tu diputado' (Quorum) tiene, por mucho, mas comentarios que cualquier otro (161) con vistas relativamente bajas (aprox. 11.8 mil). Esto sugiere que las vistas miden alcance pasivo mientras que comentar refleja un tipo distinto de involucramiento (indignacion/controversia politica, en el caso de Quorum), que no escala linealmente con el alcance.
+- Limitaciones de ambos conteos: view_count se congelo en el momento de la recoleccion (no representa vistas actuales) y los comentarios en este dataset son una MUESTRA (solo 19 de 293 videos tienen algun comentario), no el total real de comentarios de cada video en YouTube.
 
 ## 3.4 Visualizaciones
 
@@ -332,9 +326,6 @@ Deteccion automatica de idioma (langdetect, poco confiable en textos muy cortos,
 
 ![08_wordcloud.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/08_wordcloud.png)
 
-
----
-
 ## 5.1 / 5.2 Proyecciones
 
 - Autor-autor: 332 nodos, 10732 aristas.
@@ -378,7 +369,7 @@ Se guardaron 3 figuras: (10) la proyeccion autor-autor completa, que se ve como 
 
 ## 6.2 Cohesion
 
-La red bipartita y sus proyecciones NO son cohesivas en el sentido de 'un solo bloque conectado': ambas tienen 10 componentes conexos, y el mas grande cubre 81.5% de los nodos de la bipartita pero deja 9 componentes de un solo video cada uno, totalmente aislados del resto (ver 6.3). La proyeccion autor-autor es MUY cohesiva DENTRO de cada componente (clustering ~0.97, casi clique) pero eso es estructuralmente esperable y no implica cohesion social real entre esos autores (ver 4.5 y 5.3).
+La red bipartita y sus proyecciones NO son cohesivas en el sentido de 'un solo bloque conectado': ambas tienen 10 componentes conexos, y el mas grande cubre 81.5% de los nodos de la bipartita pero deja 9 componentes de un solo video cada uno, totalmente aislados del resto (ver 6.3). La proyeccion autor-autor es MUY cohesiva DENTRO de cada componente (clustering aprox. 0.97, casi clique) pero eso es estructuralmente esperable y no implica cohesion social real entre esos autores (ver 4.5 y 5.3).
 
 ## 6.3 Perifericos y aislados
 
@@ -417,9 +408,6 @@ Desglose de los 10 componentes de la red bipartita:
 
 
 ![12_proyeccion_video_video.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/12_proyeccion_video_video.png)
-
-
----
 
 ## Sentimiento por comentario
 
@@ -521,9 +509,6 @@ Para **videos**: el grado (numero de autores distintos) ya identifica alcance di
 
 ![13_comunidades.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/13_comunidades.png)
 
-
----
-
 ## 9.1 Resultados generales
 
 Distribucion de sentimiento sobre los 406 comentarios: {'NEG': 0.613, 'NEU': 0.195, 'POS': 0.192}
@@ -567,7 +552,7 @@ Grafico guardado en outputs/figs/14_sentimiento_por_video.png.
 
 ## Sentimiento por comunidad (ver ejercicio 7.5)
 
-Ya reportado en outputs/reporte_ejercicio_7_8.md: la Comunidad 0 ('Que rico come tu diputado') es 81% negativa, la Comunidad 1 ('cooptacion USAC') 58% negativa pero con mas mezcla (22% positiva), y la Comunidad 2 (los 3 videos de consumidor/servicios de Quorum) es la mas equilibrada del top-3 (50% negativa, 26% positiva) -- consistente con ser contenido mas informativo y menos indignante que el escandalo de los diputados.
+Ya reportado en outputs/reporte_ejercicio_7_8.md: la Comunidad 0 ('Que rico come tu diputado') es 81% negativa, la Comunidad 1 ('cooptacion USAC') 58% negativa pero con mas mezcla (22% positiva), y la Comunidad 2 (los 3 videos de consumidor/servicios de Quorum) es la mas equilibrada del top-3 (50% negativa, 26% positiva), consistente con ser contenido mas informativo y menos indignante que el escandalo de los diputados.
 
 ## 9.3 Hallazgos
 
@@ -579,9 +564,6 @@ Ya reportado en outputs/reporte_ejercicio_7_8.md: la Comunidad 0 ('Que rico come
 ![14_sentimiento_por_video.png](C:/Users/leome/OneDrive/Desktop/Universidad/CC3084-Laboratorio6/outputs/figs/14_sentimiento_por_video.png)
 
 
----
-
-
 ## 10. Interpretacion, limitaciones y conclusiones
 
 ### 10.1 Los hallazgos en el contexto de participacion y consumo en YouTube
@@ -590,8 +572,8 @@ Este dataset no describe "la audiencia de YouTube en Guatemala": describe la
 participacion observada en los comentarios de **19 videos de 293 recolectados**,
 casi todos de tematica politica/noticiosa. Dentro de esa ventana, el patron mas
 claro es que **ver un video y comentarlo son comportamientos distintos**: el video
-mas visto del subconjunto (Plan 2032 Ciudad de Guatemala, ~304 mil vistas) no es
-el mas comentado, y viceversa (Que rico come tu diputado, ~11.8 mil vistas, 161
+mas visto del subconjunto (Plan 2032 Ciudad de Guatemala, aprox. 304 mil vistas) no es
+el mas comentado, y viceversa (Que rico come tu diputado, aprox. 11.8 mil vistas, 161
 comentarios). Esto sugiere que comentar en este corpus esta ligado a la
 indignacion/controversia del contenido (escandalos de corrupcion, gastos
 publicos) mas que al alcance/popularidad general del video.
@@ -609,24 +591,24 @@ comentaristas politicos que sigue multiples contenidos.
   comentario en el dataset, y de esos, la mitad del volumen de comentarios viene
   de un solo video. No se puede asumir que los otros 274 videos no reciben
   comentarios en la realidad; simplemente no fueron recolectados aqui.
-- **Seleccion por consultas de busqueda (`source_query`/`source_group`)**: el
+- **Seleccion por consultas de busqueda (source_query/source_group)**: el
   metodo de muestreo (topic vs. channel) determino que tipo de contenido entro al
   dataset; el ejercicio 3.6 muestra que el like promedio por comentario difiere
   6x entre ambos grupos (6.32 vs. 0.72), evidencia de que el metodo de
   recoleccion, no solo el contenido, explica parte de los patrones observados.
-- **Fechas relativas**: `published_text` de los comentarios ("hace 2 años") no es
+- **Fechas relativas**: published_text de los comentarios ("hace 2 años") no es
   una fecha exacta y depende del momento de scraping; no se pudo, por ejemplo,
   ordenar comentarios cronologicamente con precision ni analizar series de tiempo
   reales de participacion.
-- **Conteos observados al momento de recoleccion**: `view_count`, `like_count` y
-  `reply_count` son una fotografia de un instante, no el estado actual; dos
+- **Conteos observados al momento de recoleccion**: view_count, like_count y
+  reply_count son una fotografia de un instante, no el estado actual; dos
   videos "iguales" en el dataset pueden haber sido scrapeados en momentos muy
   distintos de su ciclo de vida (recien publicado vs. con años online).
 - **Falta de relaciones explicitas entre autores**: como advierte el enunciado,
-  `reply_count` no identifica a quien respondio; toda arista construida en este
+  reply_count no identifica a quien respondio; toda arista construida en este
   laboratorio es co-participacion (mismo video), nunca conversacion directa. El
-  hallazgo de 36/406 `comment_id` con formato de respuesta de YouTube
-  (`looks_like_reply_id`, ejercicio 2.1) sugiere ademas que el propio proceso de
+  hallazgo de 36/406 comment_id con formato de respuesta de YouTube
+  (looks_like_reply_id, ejercicio 2.1) sugiere ademas que el propio proceso de
   recoleccion mezclo accidentalmente algunas respuestas dentro del archivo de
   "comentarios principales", lo cual pudo inflar levemente algunos pesos de
   arista (ver ejercicio 4.1).
@@ -670,7 +652,7 @@ excepcion notable de una comunidad que fusiona 3 videos de contenido de
 consumidor/servicios de Quorum, sugiriendo una audiencia fiel a ese tipo de
 periodismo especifico, distinta de la audiencia mas amplia y volatil del
 escandalo viral. La centralidad (ejercicio 8) identifica un puñado de autores y
-videos "puente" cuya remocion fragmentaria aun mas la red -- perfiles utiles
+videos "puente" cuya remocion fragmentaria aun mas la red, perfiles utiles
 para entender que sostiene la (poca) conectividad del dataset. El analisis de
 sentimiento (ejercicio 9) no contradice nada de esto: el tono negativo
 predominante se explica mejor por que TEMA se recolecto (corrupcion, gasto
@@ -680,6 +662,3 @@ conjunto, los resultados son validos como descripcion de esta muestra especifica
 y como ejercicio metodologico de analisis de redes sociales, pero no deben
 leerse como un retrato representativo de YouTube Guatemala ni de la opinion
 publica del pais.
-
-
----

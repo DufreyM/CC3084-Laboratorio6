@@ -87,7 +87,7 @@ excepcion notable de una comunidad que fusiona 3 videos de contenido de
 consumidor/servicios de Quorum, sugiriendo una audiencia fiel a ese tipo de
 periodismo especifico, distinta de la audiencia mas amplia y volatil del
 escandalo viral. La centralidad (ejercicio 8) identifica un puñado de autores y
-videos "puente" cuya remocion fragmentaria aun mas la red -- perfiles utiles
+videos "puente" cuya remocion fragmentaria aun mas la red, perfiles utiles
 para entender que sostiene la (poca) conectividad del dataset. El analisis de
 sentimiento (ejercicio 9) no contradice nada de esto: el tono negativo
 predominante se explica mejor por que TEMA se recolecto (corrupcion, gasto
