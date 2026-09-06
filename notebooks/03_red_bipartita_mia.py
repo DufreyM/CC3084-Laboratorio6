@@ -172,7 +172,7 @@ plt.legend(scatterpoints=1, loc="lower left")
 plt.title("Red bipartita autor-video (todos los autores y videos con comentarios)")
 plt.axis("off")
 plt.tight_layout()
-plt.savefig(FIGS / "09_red_bipartita_completa.png", dpi=130)
+plt.savefig(FIGS / "09_red_bipartita_completa.png", dpi=130, bbox_inches="tight", pad_inches=0.3)
 plt.close()
 
 log("\n## 4.4 Visualizacion\n")
